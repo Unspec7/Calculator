@@ -26,8 +26,10 @@
         android:background="#708090"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDisplay">
+        app:layout_constraintTop_toBottomOf="@+id/inputDisplay"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/dot"
@@ -183,20 +185,17 @@
             app:layout_column="2"
             app:layout_row="1" />
 
-        <TextView
+        <ImageView
             android:id="@+id/delete"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
+            android:contentDescription="@string/Delete"
             android:onClick="delete"
-            android:text="@string/delete"
+            android:scaleType="center"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="45sp"
-            app:autoSizeTextType="uniform"
             app:layout_column="2"
-            app:layout_row="4" />
+            app:layout_row="4"
+            app:srcCompat="@android:drawable/ic_input_delete" />
 
     </android.support.v7.widget.GridLayout>
 

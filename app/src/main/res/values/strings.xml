@@ -13,4 +13,5 @@
     <string name="dot">.</string>
     <string name="delete">DEL</string>
     <string name="clear">CLR</string>
+    <string name="Delete">Delete button for deleting one value</string>
 </resources>

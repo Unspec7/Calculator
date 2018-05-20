@@ -3,6 +3,7 @@ package com.example.jeff.calculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.*;
@@ -12,6 +13,7 @@ public class MainScreen extends AppCompatActivity {
     private double counter = 0.0;
     Stack<String> operations = new Stack<>();
     TextView numberDisplay;
+    ImageView delButton;
     String holder = "";
     boolean decimal = false;
 
@@ -19,77 +21,111 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+        delButton = findViewById(R.id.delete);
         numberDisplay = findViewById(R.id.inputDisplay);
     }
 
     public void zero(View view){
-        operations.push("0");
-        update("0");
+        pushOP("0");
     }
 
     public void uno(View view){
-        operations.push("1");
-        update("1");
+        pushOP("1");
     }
 
     public void two(View view){
-        operations.push("2");
-        update("2");
+        pushOP("2");
     }
 
     public void three(View view){
-        operations.push("3");
-        update("3");
+        pushOP("3");
     }
 
     public void four(View view){
-        operations.push("4");
-        update("4");
+        pushOP("4");
     }
 
     public void five(View view){
-        operations.push("5");
-        update("5");
+        pushOP("5");
     }
 
     public void six(View view){
-        operations.push("6");
-        update("6");
+        pushOP("6");
     }
 
     public void seven(View view){
-        operations.push("7");
-        update("7");
+        pushOP("7");
     }
 
     public void eight(View view){
-        operations.push("8");
-        update("8");
+        pushOP("8");
     }
 
     public void nine(View view){
-        operations.push("9");
-        update("9");
+        pushOP("9");
     }
 
     public void dot(View view){
+        equal();
         if (!decimal) {
-            operations.push(".");
-            update(".");
+            pushOP(".");
             decimal = true;
         }
     }
 
-    private void delete(View view){
-
+    public void equal(){
+        /**
+         * @author Unspec7
+         * Final operations calculation
+         */
+        delButton.setImageResource(android.R.drawable.ic_menu_delete);
     }
 
-    private void clear(View view){
+    public void delete(View view){
+        if (delButton.getDrawable().getConstantState() == getResources().getDrawable(android.R.drawable.ic_input_delete).getConstantState()) {
+            // Delete
+            if (holder.length() > 0 && !operations.empty()) {
+                holder = holder.substring(0, holder.length() - 1);
+                operations.pop();
+                updateText();
+            }
+        }
+        else{
+            // Clear
+            if (holder.length() != 0) {
+                holder = "";
+                operations.clear();
+                fliptoDel();
+                updateText();
+            }
+        }
+    }
 
+    private void fliptoDel(){
+        /**
+         * @author Unspec7
+         * Used to flip the clear icon, which shows up after an operation has been done
+         * to the delete icon again
+         */
+        delButton.setImageResource(android.R.drawable.ic_input_delete);
+    }
+
+    private void pushOP(String item){
+        operations.push(item);
+        update(item);
     }
 
     private void update(String item){
         holder += item;
+        updateText();
+    }
+
+    private void updateText(){
         numberDisplay.setText(holder);
+        //printStack(); // Used for troubleshooting
+    }
+
+    private void printStack(){
+        System.out.println(Arrays.toString(operations.toArray()));
     }
 }
