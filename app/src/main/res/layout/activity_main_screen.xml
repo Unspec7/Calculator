@@ -7,12 +7,197 @@
     tools:context="com.example.jeff.calculator.MainScreen">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/inputDisplay"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif"
+        android:textAlignment="textEnd"
+        android:textSize="45sp"
+        android:autoSizeMinTextSize="27sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#708090"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDisplay">
+
+        <TextView
+            android:id="@+id/dot"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="dot"
+            android:text="@string/dot"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="0"
+            app:layout_row="4" />
+
+        <TextView
+            android:id="@+id/zero"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="zero"
+            android:text="@string/zero"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="1"
+            app:layout_row="4" />
+
+        <TextView
+            android:id="@+id/one"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="uno"
+            android:text="@string/one"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="0"
+            app:layout_row="3" />
+
+        <TextView
+            android:id="@+id/two"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="two"
+            android:text="@string/two"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="1"
+            app:layout_row="3" />
+
+        <TextView
+            android:id="@+id/three"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="three"
+            android:text="@string/three"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="2"
+            app:layout_row="3" />
+
+        <TextView
+            android:id="@+id/four"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="four"
+            android:text="@string/four"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <TextView
+            android:id="@+id/five"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="five"
+            android:text="@string/five"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="1"
+            app:layout_row="2" />
+
+        <TextView
+            android:id="@+id/six"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="six"
+            android:text="@string/six"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="2"
+            app:layout_row="2" />
+
+        <TextView
+            android:id="@+id/seven"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="seven"
+            android:text="@string/seven"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <TextView
+            android:id="@+id/eight"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="eight"
+            android:text="@string/eight"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="1"
+            app:layout_row="1" />
+
+        <TextView
+            android:id="@+id/nine"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="nine"
+            android:text="@string/nine"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:layout_column="2"
+            app:layout_row="1" />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="delete"
+            android:text="@string/delete"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            app:autoSizeTextType="uniform"
+            app:layout_column="2"
+            app:layout_row="4" />
+
+    </android.support.v7.widget.GridLayout>
 
 </android.support.constraint.ConstraintLayout>
