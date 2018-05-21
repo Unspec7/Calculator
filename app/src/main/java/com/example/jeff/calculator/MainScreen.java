@@ -1,5 +1,6 @@
 package com.example.jeff.calculator;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.*;
+
+import static android.app.PendingIntent.getActivity;
 
 public class MainScreen extends AppCompatActivity {
 
@@ -82,7 +85,8 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void delete(View view){
-        if (delButton.getDrawable().getConstantState() == getResources().getDrawable(android.R.drawable.ic_input_delete).getConstantState()) {
+        if (delButton.getDrawable().getConstantState() == ContextCompat.getDrawable(
+                this, android.R.drawable.ic_input_delete).getConstantState()) {
             // Delete
             if (holder.length() > 0 && !operations.empty()) {
                 holder = holder.substring(0, holder.length() - 1);
