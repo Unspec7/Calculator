@@ -14,4 +14,10 @@
     <string name="delete">DEL</string>
     <string name="clear">CLR</string>
     <string name="Delete">Delete button for deleting one value</string>
+    <string name="add">+</string>
+    <string name="sub">-</string>
+    <string name="mult">x</string>
+    <string name="div">/</string>
+    <string name="opback">Operations background</string>
+    <string name="eq">=</string>
 </resources>

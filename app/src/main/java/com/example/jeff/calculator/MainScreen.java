@@ -76,7 +76,55 @@ public class MainScreen extends AppCompatActivity {
         }
     }
 
-    public void equal(){
+    public void plus(View view){
+        String currentOP = operations.peek();
+        if (!currentOP.equals("+")) {
+            if (currentOP.equals("x") || currentOP.equals("/") || currentOP.equals("-")) {
+                operations.pop();
+                pushOP("+");
+            } else {
+                pushOP("+");
+            }
+        }
+    }
+
+    public void mult(View view){
+        String currentOP = operations.peek();
+        if (!currentOP.equals("x")) {
+            if (currentOP.equals("+") || currentOP.equals("/") || currentOP.equals("-")) {
+                operations.pop();
+                pushOP("x");
+            } else {
+                pushOP("x");
+            }
+        }
+    }
+
+    public void div(View view){
+        String currentOP = operations.peek();
+        if (!currentOP.equals("/")) {
+            if (currentOP.equals("x") || currentOP.equals("+") || currentOP.equals("-")) {
+                operations.pop();
+                pushOP("/");
+            } else {
+                pushOP("/");
+            }
+        }
+    }
+
+    public void sub(View view){
+        String currentOP = operations.peek();
+        if (!currentOP.equals("-")) {
+            if (currentOP.equals("x") || currentOP.equals("/") || currentOP.equals("+")) {
+                operations.pop();
+                pushOP("-");
+            } else {
+                pushOP("-");
+            }
+        }
+    }
+
+    public void equal(View view){
         /**
          * @author Unspec7
          * Final operations calculation
