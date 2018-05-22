@@ -69,7 +69,6 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void dot(View view){
-        equal();
         if (!decimal) {
             pushOP(".");
             decimal = true;
