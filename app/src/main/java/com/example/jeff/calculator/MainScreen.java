@@ -75,6 +75,14 @@ public class MainScreen extends AppCompatActivity {
         }
     }
 
+    public void openp(View view){
+        pushOP("(");
+    }
+
+    public void closdp(View view){
+        pushOP(")");
+    }
+
     public void plus(View view){
         String currentOP = operations.peek();
         if (!currentOP.equals("+")) {
@@ -129,6 +137,24 @@ public class MainScreen extends AppCompatActivity {
          * Final operations calculation
          */
         delButton.setImageResource(android.R.drawable.ic_menu_delete);
+
+        String op = "";
+        double result = 0.0;
+        while (!operations.empty()){
+            while (!operations.peek().equals("+") || !operations.peek().equals("/") ||
+                    !operations.peek().equals("x") || !operations.peek().equals("-")){
+                if (operations.peek().equals(")")){
+                    if (operations.pop().equals(")") ){
+                        paran();
+                    }
+                }
+            }
+            op = operations.pop();
+        }
+    }
+
+    private double paran(){
+        return 0;
     }
 
     public void delete(View view){
